@@ -80,7 +80,11 @@
       }
 
       const prevImg = () => {
-
+        if(i <= 0){
+          i = sources.length
+        }
+        i--;
+        setImg()
       }
     </script>
   </body>
