@@ -47,11 +47,7 @@
     <div class="container">
       <div class="img img-1">
         <img src="./images/910412.jpg" />
-      </div>
-      <div class="img img-2">
         <img src="./images/910607.jpg" />
-      </div>
-      <div class="img img-3">
         <img src="./images/91672.jpg" />
       </div>
     </div>
@@ -60,7 +56,7 @@
         <i class="fa fa-chevron-right" onclick="nextImg()"></i>
       </div>
       <div class="left-arrow">
-        <i class="fa fa-chevron-left"></i>
+        <i class="fa fa-chevron-left" onclick="prevImg()"></i>
       </div>
     </div>
     <script>
@@ -72,15 +68,19 @@
       let i = 0;
 
       const nextImg = () => {
-        
+        if(i >= sources.length - 1){
+          i = -1
+        }
+        i ++ ;
+        return setImg()
       }
 
       const setImg = () => {
-        
+        return arrayOfImages.map(item => item.setAttribute("src",sources[i]))
       }
 
       const prevImg = () => {
-        
+
       }
     </script>
   </body>
