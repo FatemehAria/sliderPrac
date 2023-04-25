@@ -5,43 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="style/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <style>
-      * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-      }
-      .container {
-        width: 910px;
-        height: 412px;
-        display: flex;
-        overflow: hidden;
-      }
-      .img {
-        width: 100%;
-        height: 100%;
-        display: block;
-      }
-      .arrows {
-        display: flex;
-        color: white;
-        font-size: 1.5rem;
-      }
-      .right-arrow {
-        position: relative;
-        top: -12rem;
-        left: 55%;
-      }
-      .left-arrow {
-        position: relative;
-        top: -12rem;
-        left: 2rem;
-      }
-    </style>
   </head>
   <body>
     <div class="container">
@@ -59,33 +27,6 @@
         <i class="fa fa-chevron-left" onclick="prevImg()"></i>
       </div>
     </div>
-    <script>
-      let img = document.querySelectorAll(".img img")
-      let arrayOfImages = [...img]
-      let sources = []
-      arrayOfImages.map(item => sources.push(item.getAttribute("src")))
-      console.log(sources)
-      let i = 0;
-
-      const nextImg = () => {
-        if(i >= sources.length - 1){
-          i = -1
-        }
-        i ++ ;
-        return setImg()
-      }
-
-      const setImg = () => {
-        return arrayOfImages.map(item => item.setAttribute("src",sources[i]))
-      }
-
-      const prevImg = () => {
-        if(i <= 0){
-          i = sources.length
-        }
-        i--;
-        setImg()
-      }
-    </script>
+    <script src="./js/index.js"></script>
   </body>
 </html>
